@@ -4,20 +4,22 @@
 
 #### 本项目是一个完整后台管理及服务端接口API，提供上线部署流程
 
-* 前端基于 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin/tree/i18n)的国际版，感谢[作者PanJiaChen](https://github.com/PanJiaChen)（由于精力有限，本项目只做了简体中文的，并未支持国际版，囧。。。）
-* 后端基于 Node.js➕MongoDB➕Koa2 实现的完整服务端接口API
-* 项目模块
-  * 登录注册
-  * jwt验证
-  * sign验证
-  * 上传/下载文件
-  * 管理员实现增删改查用户、角色管理、菜单管理等
-  * 商品列表（增删改查）
-  * 商品分类（增删改查）
-  * 商品型号（增删改查）
-  * 公告管理（增删改查）
-  * 广告管理（增删改查）
-  * 其他。。持续增加ing
+- 前端代码：[sky-vue-element-admin](https://gitee.com/ckjiang/sky-vue-element-admin)。基于 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin/tree/i18n)的国际版，感谢[作者PanJiaChen](https://github.com/PanJiaChen)（由于精力有限，本项目只做了简体中文的，并未支持国际版，囧。。。）
+- 后端基于 Node.js➕MongoDB➕Koa2 实现的完整服务端接口API
+- 项目模块
+  - 登录 / 注册 / 注销
+  - jwt验证
+  - sign验证
+  - 上传/下载文件
+  - 用户管理
+  - 角色管理
+  - 菜单管理
+  - 商品列表
+  - 商品分类
+  - 商品型号
+  - 公告管理
+  - 广告管理
+  - 其他。。持续增加ing
 
 - **MongoDB**使用[mongoose5.x](https://mongoosejs.com/docs/5.x/docs/index.html)，对应MongoDB server 需要v3.6+
 - 一份好的api文档，可以减少前后端的交流时间，把时间用在刀刃上，本项目api使用[swagger](github.com/scttcper/koa2-swagger-ui](https://github.com/scttcper/koa2-swagger-ui))自动生成，后端不需要开发完接口后再操心api文档的琐事
@@ -38,32 +40,32 @@
 
 ## 使用项目
 
-###环境准备
+### 环境准备
 
 - Install [Node.js 13.0.1+](https://nodejs.org/en/)
 - Install [MongoDB server v3.6+](https://www.mongodb.com/download-center#community)（具体安装就不说了，可自行google，不懂再微我）
 
-###克隆项目
+### 克隆项目
 
 ```sh
 $ git clone --depth=1 https://gitee.com/ckjiang/skynode.git
 ```
 
-###安装依赖
+### 安装依赖
 
 ```sh
 $ cd skynode
 $ npm install
 ```
 
- ### 环境配置
+### 环境配置
 
 ```bash
 $ mv .env_exapmle .env
 $ vi .env 	// 修改为自己环境所需配置
 ```
 
-###运行
+### 运行
 
 ```bash
 $ npm run dev
@@ -92,10 +94,15 @@ $ npm run dev
 | **node_modules**   | 所有npm依赖项                                                |
 | package.json       | 包含npm依赖项以及 [build scripts](#what-if-a-library-isnt-on-definitelytyped) |
 
-## License
+## 捐赠
 
-* MIT
-* 本项目会持续维护，如果对你有帮助的话，请你点一个星星 star 鼓励我，也可以请我喝杯果汁🍹
-* 如果您有更好的建议和意见，请提出来告知我，可以留言 Issues或加我微信。希望能够帮助到你学习！Thanks！共勉！
+本项目会持续维护，如果对你有帮助的话，请你点一个星星 star 鼓励我，也可以请我喝杯果汁🍹
+
+如果您有更好的建议和意见，请提出来告知我，可以留言 Issues或加我微信。希望能够帮助到你学习！
+
+谢谢！共勉！
 <img width="200" src="https://gitee.com/ckjiang/node-mysql-koa2/raw/main/image/wx.png"/><img width="200" src="https://gitee.com/ckjiang/node-mysql-koa2/raw/main/image/wx-pay.png"/><img width="200" src="https://gitee.com/ckjiang/node-mysql-koa2/raw/main/image/zfb-pay.png"/>
 
+## 许可证
+
+- MIT
