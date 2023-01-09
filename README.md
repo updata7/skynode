@@ -4,7 +4,7 @@
 
 #### 本项目是一个完整后台管理及服务端接口API，提供上线部署流程
 
-- 前端代码：[sky-vue-element-admin](https://gitee.com/ckjiang/sky-vue-element-admin)。基于 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin/tree/i18n)的国际版，感谢[作者PanJiaChen](https://github.com/PanJiaChen)（由于精力有限，本项目只做了简体中文的，并未支持国际版，囧。。。）
+- 前端代码：[sky-vue-element-admin](https://github.com/updata7/sky-vue-element-admin)。基于 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin/tree/i18n)的国际版，感谢[作者PanJiaChen](https://github.com/PanJiaChen)（由于精力有限，本项目只做了简体中文的，并未支持国际版，囧。。。）
 - 后端基于 Node.js➕MongoDB➕Koa2 实现的完整服务端接口API
 - 项目模块
   - 登录 / 注册 / 注销
@@ -48,7 +48,7 @@
 ### 克隆项目
 
 ```sh
-$ git clone --depth=1 https://gitee.com/ckjiang/skynode.git
+$ git clone --depth=1 https://github.com/updata7/skynode.git
 ```
 
 ### 安装依赖
