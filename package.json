@@ -1,0 +1,42 @@
+{
+  "name": "skynode",
+  "version": "1.0.0",
+  "description": "server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_OPTIONS='--trace-warnings' NODE_ENV=development NODE_PATH=src nodemon --watch src index.js | bunyan -o short",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ck",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^3.3.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "esm": "^3.2.25",
+    "ioredis": "^5.2.4",
+    "joi": "^13.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.4",
+    "koa-body": "^6.0.1",
+    "koa-joi-router": "^5.1.0",
+    "koa-joi-router-docs": "^0.1.9",
+    "koa-router": "^10.1.1",
+    "koa-sslify": "^5.0.0",
+    "koa-static": "^5.0.0",
+    "koa2-swagger-ui": "^5.5.1",
+    "md5": "^2.3.0",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.8",
+    "mysql2": "^2.3.3",
+    "nconf": "^0.12.0",
+    "path-to-regexp": "^6.2.1",
+    "random-string": "^0.2.0",
+    "sequelize": "^6.25.6",
+    "swagger-jsdoc": "^6.2.1"
+  },
+  "devDependencies": {
+    "bunyan": "^1.8.15",
+    "nodemon": "^2.0.20"
+  }
+}
