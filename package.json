@@ -12,8 +12,6 @@
   "dependencies": {
     "@koa/cors": "^3.3.0",
     "crypto": "^1.0.1",
-    "dotenv": "^16.0.3",
-    "esm": "^3.2.25",
     "ioredis": "^5.2.4",
     "joi": "^13.6.0",
     "jsonwebtoken": "^8.5.1",
@@ -37,6 +35,8 @@
   },
   "devDependencies": {
     "bunyan": "^1.8.15",
+    "dotenv": "^16.0.3",
+    "esm": "^3.2.25",
     "nodemon": "^2.0.20"
   }
 }
