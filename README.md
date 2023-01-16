@@ -67,11 +67,19 @@ $ vi .env 	// 修改为自己环境所需配置
 
 ### 运行
 
+- 方式一：使用npm
+
 ```bash
 $ npm run dev
 ```
 
+- 方式二（推荐）：使用pm2
 
+  ```bash
+  $ pm2 start pm2.json
+  ```
+
+  
 
 ## 文件结构及说明表
 
