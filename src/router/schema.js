@@ -27,6 +27,10 @@ const cudListSchema = Joi.object({
   data: Joi.array().description('数据列表').example([])
 })
 
+const cudObjectSchema = Joi.object({
+  data: Joi.object().description('数据对象').example({})
+})
+
 const pagingSchema = {
   request: {
     // 这里使用了default默认值，不要添加required desc 降序
@@ -55,5 +59,6 @@ export {
   cudResultSchema,
   pagingSchema,
   cudTimeSchema,
-  cudListSchema
+  cudListSchema,
+  cudObjectSchema
 }

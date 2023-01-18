@@ -7,8 +7,8 @@
     "dev": "NODE_OPTIONS='--trace-warnings' NODE_ENV=development NODE_PATH=src nodemon --watch src index.js | bunyan -o short",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ck",
-  "license": "ISC",
+  "author": "ck <jyc008008@qq.com>",
+  "license": "MIT",
   "dependencies": {
     "@koa/cors": "^3.3.0",
     "crypto": "^1.0.1",
@@ -37,6 +37,7 @@
     "bunyan": "^1.8.15",
     "dotenv": "^16.0.3",
     "esm": "^3.2.25",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "province-city-china": "^8.5.6"
   }
 }

@@ -51,7 +51,7 @@ export default class BaseMongo {
   }
 
   // 获取列表 分页
-  async list(query, options, lookup) {
+  async list(query, options, lookupArr) {
     const { pageNo, pageSize, sortField, sortOrder, isLoadAll } = options
     let skip = (pageNo - 1) * pageSize
     let limit = pageSize
@@ -65,10 +65,9 @@ export default class BaseMongo {
     }
 
     let data
-    if (lookup) {
-      const pipelines = [
-        { $lookup: lookup }
-      ]
+    if (!_.isEmpty(lookupArr)) {
+      const pipelines = []
+      lookupArr.map(r => pipelines.push({ $lookup: r }))
       if (!_.isEmpty(query)) {
         pipelines.push({ $match: query })
       }

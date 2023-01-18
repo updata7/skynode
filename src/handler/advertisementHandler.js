@@ -16,12 +16,12 @@ class AdvertisementHandler {
     async search(ctx) {
         const params = ctx.request.query
         let query = {}
-        const { data, total } = await advertisementModel.list(query, params, {
+        const { data, total } = await advertisementModel.list(query, params, [{
             from: 'goods', 
             localField: 'goods_id', 
             foreignField: '_id', 
             as: 'goods'
-        })
+        }])
         ctx.body = { data, total }
     }
   

@@ -1,6 +1,8 @@
 import goodsModel from "../model/goodsModel";
 import goodsProductModel from "../model/goodsProductModel";
 
+import _ from "lodash";
+
 class GoodsHandler {
     async search(ctx) {
         const { name, listType, ...options } = ctx.request.query
@@ -22,9 +24,9 @@ class GoodsHandler {
 
         logger.info("goodsCategoryHandler search ===> ", query)
 
-        const { data, total } = await goodsModel.list(query, options, {
+        const { data, total } = await goodsModel.list(query, options, [{
             from: 'goods_products', localField: '_id', foreignField: 'goods_id', as: 'products'
-        })
+        }])
 
         ctx.body = { data, total }
     }
@@ -48,7 +50,7 @@ class GoodsHandler {
 
         logger.debug('goodsHandler update ==> ', id, goodsDoc)
         let stock
-        if (products) {
+        if (!_.isEmpty(products)) {
             stock = products.reduce((sum, curObj) => {
                 if (!curObj.belong_user_id || curObj.belong_user_id === belong_user_id)
                     return sum + curObj.stock
@@ -64,7 +66,7 @@ class GoodsHandler {
             }
             return
         }
-        if (products)
+        if (!_.isEmpty(products))
             await goodsProductModel.updateOrInsert(products, id, belong_user_id)
 
         ctx.body = {
