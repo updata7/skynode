@@ -41,7 +41,7 @@ class FreightHandler {
         if (!_.isEmpty(not_delivery_areas)) {
             await freightNotDeliveryAreaModel.updateOrInsert(not_delivery_areas, id)
         } else {
-            await freightAreaModel.remove({ freight_id: id })
+            await freightNotDeliveryAreaModel.remove({ freight_id: id })
         }
 
         ctx.body = { success: true }
