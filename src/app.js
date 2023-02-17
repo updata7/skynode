@@ -6,6 +6,7 @@ import { getAuthentication } from 'middleware/authentication'
 import { getAllRouters } from 'middleware/router'
 import { logRequest, handleExceptionStatus, setResponseHeader, cors } from 'middleware'
 import { koaBody } from 'koa-body'
+import { getWxAccessToken } from './utils/wx'
 // import userModel from './model/userModel'
 const getSwagger = require('middleware/swagger')
 const initEnv = require('./utils/initEnv')
@@ -92,4 +93,5 @@ export async function start() {
         `)
         process.send('ready')
     })
+    await getWxAccessToken()
 }

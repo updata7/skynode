@@ -42,10 +42,10 @@ export function getAllRouters(options) {
         ALLAPIS.push(obj)
         if (Array.isArray(route)) {
             route.forEach((i) => {
-                if (fileNameToRoute[i.path]) {
+                if (fileNameToRoute[i.path+i.method]) {
                     throw new Error(`路由重复配置：${i.path}`)
                 }
-                fileNameToRoute[i.path] = path.parse(item).name
+                fileNameToRoute[i.path+i.method] = path.parse(item).name
                 obj.children.push({ value: i.path, label: i.path })
              })
             routes.push(...route)
@@ -103,7 +103,9 @@ export function getAllRouters(options) {
             method = JSON.stringify(route.method)
         }
 
-        if (method.match(/PUT|POST/i)) {
+        if (method.match(/GET/i)) {
+            // nothing todo here
+        } else if (method.match(/PUT|POST/i)) {
             route.validate.type = route.validate.type || 'json'
         } else if (method.match(/DELETE/i)) {
             route.validate.type = route.validate.type || 'x-www-form-urlencoded'

@@ -7,6 +7,8 @@ import _ from 'lodash'
 import bunyan from 'bunyan'
 import redis from './redis'
 import { name } from '../../package.json'
+import sha1 from "sha1"
+import xml2js from 'xml2js';
 
 /**
  * 获取制定目录下的绝对路径
@@ -161,4 +163,50 @@ export async function saveFiles(files) {
 // 清除缓存角色权限
 export async function clearRolePermCache(role) {
     await redis.set(`role:${role}`, null)
+}
+
+
+export function wxGetSignature(timestamp, nonce, token) {
+    let arr = [token, timestamp, nonce]
+    let res = sha1(arr.sort().join(''))
+    return res
+}
+
+/*!
+ * 将xml2js解析出来的对象转换成直接可访问的对象
+ */
+function formatMessage(result) {
+    var message = {};
+    if (typeof result === 'object') {
+      for (var key in result) {
+        if (!(result[key] instanceof Array) || result[key].length === 0) {
+          continue;
+        }
+        if (result[key].length === 1) {
+          var val = result[key][0];
+          if (typeof val === 'object') {
+            message[key] = formatMessage(val);
+          } else {
+            message[key] = (val || '').trim();
+          }
+        } else {
+          message[key] = result[key].map(function (item) {
+            return formatMessage(item);
+          });
+        }
+      }
+    }
+    return message;
+}
+
+export function parseXML(xml) {
+    return new Promise((resolve, reject) => {
+        xml2js.parseString(xml, {trim: true}, function (err, obj) {
+            if (err) {
+                return reject(err);
+            }
+    
+            resolve(formatMessage(obj.xml));
+        });
+    });
 }

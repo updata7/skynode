@@ -25,5 +25,11 @@ export default {
         port: process.env.REDIS_PORT,
         db: process.env.REDIS_DB,
         expir: process.env.REDIS_EXPIR
+    },
+    // 微信公众号
+    wx_official: {
+        token: process.env.WX_OFFICIAL_TOKEN,
+        appid: process.env.WX_OFFICIAL_APPID,
+        secret: process.env.WX_OFFICIAL_SECRET
     }
 }

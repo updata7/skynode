@@ -5,7 +5,7 @@ import { removeUndefinedKey } from 'utils/tools'
 requstPromise.debug = false
 
 export default class Http {
-  static get (url, headers, qs, logRequest, logResult) {
+  static get (url, headers = {}, qs = {}, logRequest, logResult) {
     for (let [key, value] of Object.entries(qs)) {
       if (Array.isArray(value) || typeof value === 'object') {
         qs[key] = JSON.stringify(value)
