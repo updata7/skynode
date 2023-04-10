@@ -51,7 +51,7 @@ async function requestReturnJson (options, logRequest, logResult) {
       method, uri: url, headers, qs, form, body, json: true
     }
     requestOptions = removeUndefinedKey(requestOptions)
-    // console.log('requestOptions..', JSON.stringify(requestOptions))
+    console.log('requestOptions..', JSON.stringify(requestOptions))
     let result = await requstPromise(requestOptions)
     if (logResult) {
       consoleLog('requestReturnJson result', JSON.stringify(result))
