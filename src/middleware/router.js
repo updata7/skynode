@@ -74,7 +74,7 @@ export function getAllRouters(options) {
             401: {
                 schema: '未授权或缺少授权字段',
                 body: {
-                    status: 400,
+                    status: 401,
                     code: Joi.number().integer().positive().description('错误码').example(400003),
                     message: Joi.string().required().description('未授权'),
                     options: Joi.object().description('数据库错误信息')
@@ -83,7 +83,7 @@ export function getAllRouters(options) {
             500: {
                 schema: '系统错误',
                 body: {
-                    status: 400,
+                    status: 500,
                     code: Joi.number().integer().positive().description('错误码').example(400004),
                     message: Joi.string().required().description('系统错误'),
                     options: Joi.object().description('数据库错误信息')

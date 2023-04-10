@@ -93,5 +93,7 @@ export async function start() {
         `)
         process.send('ready')
     })
-    await getWxAccessToken()
+
+    // 获取微信公众号accessToken
+    // await getWxAccessToken()
 }

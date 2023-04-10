@@ -17,7 +17,9 @@ export async function handleExceptionStatus (ctx, next) {
         await next()
     } catch (err) {
         let { name, status, code, message, captureOptions } = err
-        logger.debug('error ===> ', message, name, status, err)
+        logger.debug(`error ===> message(${message}), name(${name}), 
+            status(${status}, err(${status}))`)
+        ctx.message = "服务器内部错误"
         if (name === 'AssertError') {
             logger.error('error', err)
             ctx.status = status
