@@ -4,7 +4,7 @@
   "description": "server",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_OPTIONS='--trace-warnings' NODE_ENV=development NODE_PATH=src nodemon --watch src index.js | bunyan -o short",
+    "dev": "cross-env NODE_OPTIONS='--trace-warnings' NODE_ENV=development NODE_PATH=src nodemon --watch src index.js | bunyan -o short",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ck",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "bunyan": "^1.8.15",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.20"
   }
 }
