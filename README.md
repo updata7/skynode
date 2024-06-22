@@ -22,7 +22,7 @@
   - 其他。。持续增加ing
 
 - **MongoDB**使用[mongoose5.x](https://mongoosejs.com/docs/5.x/docs/index.html)，对应MongoDB server 需要v3.6+
-- 一份好的api文档，可以减少前后端的交流时间，把时间用在刀刃上，本项目api使用[swagger](github.com/scttcper/koa2-swagger-ui](https://github.com/scttcper/koa2-swagger-ui))自动生成，后端不需要开发完接口后再操心api文档的琐事
+- 一份完善的api文档，可以有效减少不必要的沟通时间，开发者可以把时间用在刀刃上，本项目api使用[swagger](github.com/scttcper/koa2-swagger-ui](https://github.com/scttcper/koa2-swagger-ui))自动生成，后端不需要开发完接口后再操心api文档的琐事
 - 项目封装简单，易扩展，开发功能流程方便，可供新手学习，也可以快速上手二次开发
 - 具体文件结构介绍见**文件结构及说明表**
 
